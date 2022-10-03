@@ -1,0 +1,6 @@
+--Folder
+env
+
+--File
+db.sqlite3
+*.pyc

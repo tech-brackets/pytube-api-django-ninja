@@ -23,7 +23,7 @@ def audio_only(request, link: str = Form(...)):
         "status_code":200,
         "message":"success",
         "title":yu.title,
-        "audio-only":{
+        "result":{
           "m4A":res[3].url+name,
           "mp3":res[4].url+name
         }
@@ -34,7 +34,7 @@ def audio_only(request, link: str = Form(...)):
         "status_code":200,
         "message":"success",
         "title":yu.title,
-        "audio-only":{
+        "result":{
             "m4A":res[2].url+name,
             "m4B":res[3].url+name,
             "mp3":res[4].url+name
@@ -62,7 +62,7 @@ def video_with_audio(request, link:str = Form(...)):
                 "success":True,
                 "title":name,
                 "message":"success",
-                "video-sound": {
+                "result": {
                             "144p":res[0].url+"&title="+name,
                             "360p":res[1].url+"&title="+name
                           }
@@ -72,16 +72,16 @@ def video_with_audio(request, link:str = Form(...)):
                 "success":True,
                 "title":name,
                 "message":"success",
-                "video-sound":{
+                "result":{
                     "114p":res[0].url+"&title="+name,
                     "360p":res[1].url+"&title="+name,
                     "720p":res[2].url+"&title="+name
                 }
             }
-    except Exception as e:
+    except Exception as E:
         return {
             "success":False,
             "message":"link-undefined",
-            "error":str(e),
-            "inLine":e.__traceback__.tb_lineno
+            "error":str(E),
+            "inLine":E.__traceback__.tb_lineno
             }

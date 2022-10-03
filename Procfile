@@ -1,0 +1,1 @@
+web: gunicorn pytube_api.wsgi:application --log-file -

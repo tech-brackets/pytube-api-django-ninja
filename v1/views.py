@@ -9,7 +9,7 @@ from v1.schema import ErrorSchema
 
 app = NinjaAPI(title="Pytube API", version=1)
 
-@app.post('audio-only',)
+@app.post('audio-only',tags=['For Audio Only'])
 def audio_only(request, link: str = Form(...)):
   try:
     url = link
@@ -48,7 +48,7 @@ def audio_only(request, link: str = Form(...)):
       "inLine":E.__traceback__.tb_lineno
     }
 
-@app.post('video-with-audio')
+@app.post('video-with-audio', tags=['For Video Downloader'])
 def video_with_audio(request, link:str = Form(...)):
     try:
         url = link

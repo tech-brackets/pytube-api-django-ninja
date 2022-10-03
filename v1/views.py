@@ -63,8 +63,8 @@ def video_with_audio(request, link:str = Form(...)):
                 "title":name,
                 "message":"success",
                 "video-sound": {
-                              "144p":res[0].url+"&title="+name,
-                              "360p":res[1].url+"&title="+name
+                            "144p":res[0].url+"&title="+name,
+                            "360p":res[1].url+"&title="+name
                           }
                         }
         else:

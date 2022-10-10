@@ -1,13 +1,16 @@
+# Import internal function from django
 from django.shortcuts import render
 
+# Import depedencies from external library
 from ninja import NinjaAPI, Form
 from pydantic import ConfigError
-
 from pytube import YouTube as yt
-from v1.schema import ErrorSchema
-# Create your views here.
 
-app = NinjaAPI(title="Pytube API", version=1)
+# Import modules from app files
+# from v1.schema import ErrorSchema //Unused//
+
+# Create your views here.
+app = NinjaAPI(title="Pytube Youtube Downloader API", version=0.1)
 
 @app.post('audio-only',tags=['For Audio Only'])
 def audio_only(request, link: str = Form(...)):
